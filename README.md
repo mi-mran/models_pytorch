@@ -4,7 +4,7 @@ This repo holds research paper models that have been converted into PyTorch mode
 ## Models
 
 - [U-Net](https://arxiv.org/abs/1505.04597)
-- [YOLOv1]9https://arxiv.org/abs/1506.02640)
+- [YOLOv1](https://arxiv.org/abs/1506.02640)
 
 
 A work in progress.
