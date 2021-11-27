@@ -1,10 +1,11 @@
-# Models implemented in PyTorch
-This repo holds research paper models that have been converted into PyTorch models. Differences between paper and code have been annotated in the respective files.
+# Machine Learning and Deep Learning in Python
+This repo holds machine learning models that have been implemented from scratch. Comments should describe the purpose of each part of the code.
 
-## Models
+## Machine Learning
+- Decision Tree
 
-- [U-Net](https://arxiv.org/abs/1505.04597)
-- [YOLOv1](https://arxiv.org/abs/1506.02640)
-
+## Deep Learning
+- U-Net
+- YOLOv1
 
 A work in progress.
