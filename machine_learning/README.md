@@ -66,8 +66,6 @@ Entropy of Attr. 1 (Right Split): <br />
 
 Information gain can be calculated as:
 
-![equationInformationGain](https://latex.codecogs.com/png.latex?I.&space;Gain&space;=&space;E(parent)&space;-&space;weighted&space;ave.&space;of&space;children&space;nodes)
-
 ```
 I. Gain = E(parent) - weighted ave. of children nodes
 ```
