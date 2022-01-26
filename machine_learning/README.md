@@ -78,3 +78,14 @@ Therefore the information gain of Attribute 1 is:
 Similarly, the information gain of Attribute 2 is 0. Hence we can conclude that Attribute 1 has the highest information gain and would form the first split of the decision tree.
 
 **NOTE: This implementation only considers classification problems.**
+
+---
+
+## K Nearest Neighbours
+Another supervised learning algorithm that helps us compute a predicted class or continuous value based on the labels of its K nearest neighbours. The distance between the neighbours determines the final computation of the predicted output value.
+
+When given an unseen data point, the algorithm first identifies the K points that are closest to the data point based on the feature space. The distance between the data point and each K point can be calculated using various metrics, such as Manhattan, Euclidean and Hamming distances.
+
+In a classification scenario, the class that dominates within the K points is selected as the output class. In a regression scenario, the average of all the K points is computed as the output value.
+
+Although K nearest neighbours is a simple, interpretable and highly versatile algorithm, it does have several drawbacks. With an increasing volume of data, the the prediction step may be slowed. In addition, significant memory is used to store the training data. Lastly, the algorithm is sensitive to the scale of the data and the presence of irrelevant features.
