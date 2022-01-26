@@ -76,3 +76,5 @@ Therefore the information gain of Attribute 1 is:
 
 
 Similarly, the information gain of Attribute 2 is 0. Hence we can conclude that Attribute 1 has the highest information gain and would form the first split of the decision tree.
+
+**NOTE: This implementation only considers classification problems.**
