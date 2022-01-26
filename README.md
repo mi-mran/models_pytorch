@@ -3,6 +3,7 @@ This repo holds machine learning models that have been implemented from scratch.
 
 ## Machine Learning
 - Decision Tree
+- K Nearest Neighbours
 
 ## Deep Learning
 - U-Net
