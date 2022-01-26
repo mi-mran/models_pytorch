@@ -10,11 +10,6 @@ def entropy(y):
 
     return -np.sum([p * np.log2(p) for p in p_classes if p > 0])
 
-def accuracy(y_true, y_pred):
-    accuracy = np.sum(y_true == y_pred) / len(y_true)
-
-    return accuracy
-
 class Node:
     def __init__(self, feature=None, threshold=None, left=None, right=None, *, value=None):
         # value represents label on a leaf node
@@ -144,6 +139,7 @@ if __name__ == '__main__':
 
     import sklearn.datasets
     from sklearn.model_selection import train_test_split
+    from utils import accuracy
     
     raw_data = sklearn.datasets.load_breast_cancer()
 
