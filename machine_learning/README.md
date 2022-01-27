@@ -89,3 +89,57 @@ When given an unseen data point, the algorithm first identifies the K points tha
 In a classification scenario, the class that dominates within the K points is selected as the output class. In a regression scenario, the average of all the K points is computed as the output value.
 
 Although K nearest neighbours is a simple, interpretable and highly versatile algorithm, it does have several drawbacks. With an increasing volume of data, the the prediction step may be slowed. In addition, significant memory is used to store the training data. Lastly, the algorithm is sensitive to the scale of the data and the presence of irrelevant features.
+
+---
+
+## Linear Regression
+Predicting a continuous value output, linear regression is another machine learning algorithm that allows for straightforward interpretation. 
+
+When working with a single input variable, the relationship between the input and output can be described as:
+
+![equationSingleLinearRegression](https://latex.codecogs.com/png.image?\dpi{110}&space;\hat{y}&space;=&space;m_{0}X&space;&plus;&space;C) 
+
+where y-hat is the predicted target value, X is the input variable, and m<sub>0</sub> & C are parameters of the model to be tuned to the data distribution. The 
+
+In order to tune the model, a cost function can be applied, where the predicted value and the actual value are compared. Optimisation of the unknown parameters can be done using ordinary least squares (OLS) or gradient descent. There are various cost functions that can be applied, such as mean absolute error (MAE), mean squared error (MSE), root mean squared error (RMSE), mean absolute percentage error (MAPE) and mean percentage error (MPE):
+
+MAE:
+
+![equationMAE](https://latex.codecogs.com/png.image?\dpi{110}&space;MAE&space;=&space;\frac{1}{N}&space;\sum_{i=1}^{n}&space;\left|&space;y_{i}&space;-&space;\hat{y}_{i}&space;\right|)
+
+where y<sub>i</sub> is the actual value and N is the total number of samples in the given dataset.
+
+MSE:
+
+![equationMSE](https://latex.codecogs.com/png.image?\dpi{110}&space;MSE&space;=&space;\frac{1}{N}&space;\sum_{i=1}^{n}&space;(y_{i}&space;-&space;\hat{y}_{i})^{2})
+
+RMSE:
+
+![equationRMSE](https://latex.codecogs.com/png.image?\dpi{110}&space;RMSE&space;=&space;\sqrt{\frac{1}{N}&space;\sum_{i=1}^{n}&space;(y_{i}&space;-&space;\hat{y}_{i})^{2})
+
+MAPE:
+
+![equationMAPE](https://latex.codecogs.com/png.image?\dpi{110}&space;MAPE&space;=&space;\frac{100}{N}&space;\sum_{i=1}^{n}&space;\left|&space;\frac{y_{i}&space;-&space;\hat{y}_{i}}&space;{y_{i}}\right|)
+
+MPE:
+
+![equationMPE](https://latex.codecogs.com/png.image?\dpi{110}&space;MPE&space;=&space;\frac{100}{N}&space;\sum_{i=1}^{n}&space;\frac{y_{i}&space;-&space;\hat{y}_{i}}&space;{y_{i}})
+
+In the case where more than one input variable is considered, a multiple linear regression model can be used, which is extended as the form:
+
+![equationMultipleLinearRegression](https://latex.codecogs.com/png.image?\dpi{110}&space;\hat{y}&space;=&space;m_{0}X_{0}&space;&plus;m_{1}X_{1}&space;&plus;m_{2}X_{2}&space;&plus;&space;C)
+
+where m<sub>n</sub> represents the coefficient of the independent variable n and X<sub>n</sub> represents the respective independent variables.
+
+However, when using linear regression, several assumptions are made:
+
+1. There is a linear relationship between the input variable and the output variable. Inspecting their scatter plots would provide a visual check for such a relationship.
+
+2. The variance of the residual should be the same throughout the data points (residual refers to the difference between the expected output value and the predicted output value). This would also mean that the data is homoscedastic. The homoscedasticity can be validated using various tests such as the Breusch-Pagan and Goldfeld-Quandt tests.
+
+3. The input variables should not be highly correlated with one another. If there is such high correlation, there would be an issue in identifying the specific input variable that affects the variance in the output variable. This can be verified through the Variance Inflation Factor (VIF).
+
+4. Autocorrelation should also be minimised. If the values of residuals are not independent, the accuracy of the model is reduced and there is an underestimation of the standard error. Autocorrelation can be tested using the Durbin-Watson test.
+
+5. Lastly, the residuals must be normally distributed. This can be verified through a goodness of fit test, such as the Kolmogorov-Smirnov or Shapiro-Wilk tests. If the data is not normally distributed, it could possibly be remedied by a non-linear transformation (eg. log transform).
+
