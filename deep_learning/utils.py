@@ -11,4 +11,8 @@ class Dense:
 
     def forward(self, inputs):
         self.output = np.dot(inputs, self.weights) + self.biases
+
+class ReLU:
+    def forward(self, inputs):
+        self.output = np.maximum(0, inputs)
         
