@@ -15,4 +15,15 @@ class Dense:
 class ReLU:
     def forward(self, inputs):
         self.output = np.maximum(0, inputs)
-        
+
+class Softmax:
+    def forward(self, inputs):
+        # axis=1 ensures max function applied row-wise
+        # keepdims=True ensures max function outputs a column array
+        exponential_vals = np.exp(inputs - np.max(inputs, axis=1, keepdims=True))
+
+        # normalised probabilities
+        probability_vals = exponential_vals / np.sum(exponential_vals, axis=1, keepdims=True)
+
+        self.output = probability_vals
+
