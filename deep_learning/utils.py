@@ -38,6 +38,8 @@ class Loss:
         return loss
 
 class LossCrossEntropy(Loss):
+    # for classification loss
+
     def forward(self, y_pred, y_true):
         n_samples = len(y_pred)
 
